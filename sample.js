@@ -1,16 +1,17 @@
 function greet(name) {
-  return 'Hello, ' + name;
+  // changed: add exclamation and handle empty name poorly (for review testing)
+  if (!name) {
+    return 'Hello, Guest';
+  }
+  return 'Hello, ' + name + '!';
 }
 function add(a, b) {
   return a + b;
 }
+function multiply(a, b) {
+  return a * b;
+}
 const message = greet('World');
-const sum = add(2, 3);
+const total = add(5, multiply(2, 3));
 console.log(message);
-console.log(sum);
-Even simpler (one file, few lines):
-
-const price = 100;
-const discount = 10;
-const finalPrice = price - discount;
-console.log('Final price:', finalPrice);
+console.log('Total:', total);
